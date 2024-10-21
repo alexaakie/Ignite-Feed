@@ -8,36 +8,37 @@ import './global.css';
 import { Sidebar } from './components/Sidebar';
 import { Avatar } from './components/avatar';
 
+
 const posts = [
   {
     id: 1,
     author: {
       avatarURL: 'https://github.com/alexaakie.png',
       name: 'Alexsandro Fischer',
-      role: 'DEV @ TRISTE',
+      role: 'DEV TRISTE',
+    },
     content: [
-        { type: 'paragraph', content: 'Fala galeraa 👋' },
-        { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
-        { type: 'link', content: 'jane.design/doctorcare' },
-      ],
-      publishedAt: new Date('2024-10-07 04:20:00'),
-    }
+      { type: 'paragraph', content: 'Fala galeraa 👋' },
+      { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
+      { type: 'link', content: 'aleki.design/doctorcare' },
+    ],
+    publishedAt: new Date('2022-05-03 20:00:00'),
   },
   {
     id: 2,
     author: {
-      avatarURL: 'https://github.com/alexaakie/IGNITE-FEED/blob/main/src/assets/image.png',
+      avatarURL: './src/assets/image.png',
       name: 'Wellington Schwambach',
-      role: 'DEV @ TRISTE DEMAIS',
+      role: 'DEV que é TRISTE DEMAIS',
+    },
     content: [
-        { type: 'paragraph', content: 'Fala galeraa 👋' },
-        { type: 'paragraph', content: 'Se PHP fosse bom se chamava react.' },
-        { type: 'link', content: 'well.design/podresdoginfo' },
-      ],
-      publishedAt: new Date('2022-10-08 04:20:00'),
-    }
+      { type: 'paragraph', content: 'Fala galeraa 👋' },
+      { type: 'paragraph', content: 'Se PHP fosse bom se chamava react.' },
+      { type: 'link', content: 'well.design/podresdoginfo' },
+    ],
+    publishedAt: new Date('2022-05-03 20:00:00'),
   },
-]
+];
 
 export function App() {
   return (
@@ -49,6 +50,7 @@ export function App() {
         {posts.map(post => {
           return (
           <Post
+          key={post.id}
           author={post.author}
           content={post.content}
           publishedAt={post.publishedAt}
